@@ -1,0 +1,5 @@
+{
+    "queueURL": "https://queueURL.com",
+    "dynamoTableName": "my-dynamo-table-name",
+    "bomsSecretId": "my-secret-name"
+}
