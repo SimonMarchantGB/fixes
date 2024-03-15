@@ -7,7 +7,7 @@ import {localConfig} from './localvars.json'
 const QUEUE_URL = localConfig.queueURL
 const BATCH_SIZE = 10
 const MESSAGE_TIMEOUT = 300 //Need to adjust timeout so you have enough time to work the whole list before it rejoins the list because we're not deleting the messages
-const OUTPUT_FILE = 'dlqDynamoChecks.csv'
+const OUTPUT_FILE = 'dlq-order-checks.csv'
 const AWS_COMMAND = `aws sqs receive-message --queue-url ${QUEUE_URL} --visibility-timeout ${MESSAGE_TIMEOUT} --max-number-of-messages ${BATCH_SIZE} --query 'Messages[*].Body' --output json --no-paginate`
 
 AWS.config.update({ region: 'eu-west-2' })
